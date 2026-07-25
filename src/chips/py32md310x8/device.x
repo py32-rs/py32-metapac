@@ -1,0 +1,1 @@
+PROVIDE(WWDG = DefaultHandler);
