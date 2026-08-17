@@ -39,59 +39,9 @@
 ];
                 pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
-        name: "WWDG",
-        number: 0,
+        name: "LPTIM1_DAC",
+        number: 17,
     },
 ];
-                pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
-    DmaChannel {
-        name: "DMA1_CH1",
-        dma: "DMA1",
-        channel: 0,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH2",
-        dma: "DMA1",
-        channel: 1,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH3",
-        dma: "DMA1",
-        channel: 2,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH4",
-        dma: "DMA1",
-        channel: 3,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH5",
-        dma: "DMA1",
-        channel: 4,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH6",
-        dma: "DMA1",
-        channel: 5,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-    DmaChannel {
-        name: "DMA1_CH7",
-        dma: "DMA1",
-        channel: 6,
-        dmamux: None,
-        dmamux_channel: None,
-    },
-];
+                pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[];
             #[path="../registers/gpio_v1.rs"] pub mod gpio;
