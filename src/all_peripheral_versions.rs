@@ -1,6 +1,7 @@
 pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("adc", &["v1", "v1b", "v2", "v3", ]),
     ("configbytes", &["f002b", "f030", "f072", "ms32c001b", ]),
+    ("crc", &["v1", ]),
     ("dac", &["v1", ]),
     ("dbgmcu", &["f002b", "f030", "f072", ]),
     ("dma", &["f030", "f072", ]),
