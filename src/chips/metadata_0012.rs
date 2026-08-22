@@ -1,6 +1,58 @@
 
                 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
+        name: "WWDG",
+        address: 0x40002c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "wwdg",
+                version: "v1",
+                block: "WWDG",
+                ir: &wwdg::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "WWDGEN",
+                    },
+                ),
+                reset: None,
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "WWDG",
+            },
+        ],
+    },
+    Peripheral {
+        name: "IWDG",
+        address: 0x40003000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "iwdg",
+                version: "v1",
+                block: "IWDG",
+                ir: &iwdg::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "CRC",
         address: 0x40023000,
         registers: Some(
@@ -104,3 +156,5 @@
 ];
             #[path="../registers/crc_v1.rs"] pub mod crc;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
+#[path="../registers/iwdg_v1.rs"] pub mod iwdg;
+#[path="../registers/wwdg_v1.rs"] pub mod wwdg;

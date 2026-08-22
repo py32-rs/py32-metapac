@@ -10,6 +10,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("flash", &["f002b", "f030", "f072", "ms32c001b", ]),
     ("gpio", &["v1", "v1b", ]),
     ("i2c", &["v1", ]),
+    ("iwdg", &["v1", ]),
     ("pwm", &["v1", ]),
     ("rcc", &["f002b", "f030", "f072", "ms32c001b", ]),
     ("spi", &["v1", "v2", ]),
@@ -19,4 +20,5 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("usart", &["v1", "v2", ]),
     ("usb", &["v1", ]),
     ("vref", &["v1", ]),
+    ("wwdg", &["v1", ]),
 ];
