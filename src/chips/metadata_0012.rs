@@ -1,6 +1,22 @@
 
                 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
+        name: "IWDG",
+        address: 0x40003000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "iwdg",
+                version: "v1",
+                block: "IWDG",
+                ir: &iwdg::REGISTERS,
+            },
+        ),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "CRC",
         address: 0x40023000,
         registers: Some(
@@ -104,3 +120,4 @@
 ];
             #[path="../registers/crc_v1.rs"] pub mod crc;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
+#[path="../registers/iwdg_v1.rs"] pub mod iwdg;
