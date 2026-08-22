@@ -373,22 +373,6 @@
         ],
     },
     Peripheral {
-        name: "IWDG",
-        address: 0x40003000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "iwdg",
-                version: "v1",
-                block: "IWDG",
-                ir: &iwdg::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "UART1",
         address: 0x40004800,
         registers: Some(
@@ -2378,7 +2362,6 @@
 #[path="../registers/exti_v1b.rs"] pub mod exti;
 #[path="../registers/flash_ms32c001b.rs"] pub mod flash;
 #[path="../registers/gpio_v1b.rs"] pub mod gpio;
-#[path="../registers/iwdg_v1.rs"] pub mod iwdg;
 #[path="../registers/pwm_v1.rs"] pub mod pwm;
 #[path="../registers/rcc_ms32c001b.rs"] pub mod rcc;
 #[path="../registers/syscfg_f002b.rs"] pub mod syscfg;

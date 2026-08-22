@@ -119,22 +119,6 @@
         ],
     },
     Peripheral {
-        name: "IWDG",
-        address: 0x40003000,
-        registers: Some(
-            PeripheralRegisters {
-                kind: "iwdg",
-                version: "v1",
-                block: "IWDG",
-                ir: &iwdg::REGISTERS,
-            },
-        ),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        interrupts: &[],
-    },
-    Peripheral {
         name: "I2C1",
         address: 0x40005400,
         registers: Some(
@@ -1056,7 +1040,6 @@
 #[path="../registers/flash_f002b.rs"] pub mod flash;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/i2c_v1.rs"] pub mod i2c;
-#[path="../registers/iwdg_v1.rs"] pub mod iwdg;
 #[path="../registers/rcc_f002b.rs"] pub mod rcc;
 #[path="../registers/syscfg_f002b.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;
