@@ -14,6 +14,7 @@
         rcc: None,
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -30,6 +31,7 @@
         rcc: None,
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -95,6 +97,7 @@
             },
         ],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -132,6 +135,7 @@
         rcc: None,
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -168,6 +172,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -245,6 +250,7 @@
             },
         ],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -406,6 +412,7 @@
             },
         ],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -478,6 +485,7 @@
             },
         ],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -509,6 +517,7 @@
             },
         ],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -530,6 +539,7 @@
         rcc: None,
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "EXTI0",
@@ -631,6 +641,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -672,6 +683,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -708,6 +720,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -744,6 +757,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -780,6 +794,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
 ];

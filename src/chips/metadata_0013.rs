@@ -29,6 +29,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
@@ -50,6 +51,7 @@
         rcc: None,
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -86,6 +88,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -122,6 +125,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
     Peripheral {
@@ -158,6 +162,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
 ];

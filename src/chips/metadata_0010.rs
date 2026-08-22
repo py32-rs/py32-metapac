@@ -34,6 +34,7 @@
         ),
         pins: &[],
         dma_channels: &[],
+        triggers: &[],
         interrupts: &[],
     },
 ];
