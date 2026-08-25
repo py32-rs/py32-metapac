@@ -140,7 +140,7 @@
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "div_end",
+                    name: "end",
                     description: Some(
                         "Division end flag. Set when the division is finished. Reading QUOT/REMD before this flag is set returns the result of the last completed division.",
                     ),
@@ -154,7 +154,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "div_zero",
+                    name: "zero",
                     description: Some(
                         "Division by zero flag. Set when the divisor is 0. The operation ends immediately with QUOT and REMD both 0.",
                     ),
