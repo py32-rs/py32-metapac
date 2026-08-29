@@ -55,6 +55,89 @@
         interrupts: &[],
     },
     Peripheral {
+        name: "OPA",
+        address: 0x40010300,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "opa",
+                version: "v1",
+                block: "OPA",
+                ir: &opa::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "OPAEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APBRSTR1",
+                        field: "OPARST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PA9",
+                signal: "VP1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA10",
+                signal: "VN1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA8",
+                signal: "VOUT1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA7",
+                signal: "VP2",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA6",
+                signal: "VN2",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA5",
+                signal: "VOUT2",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB13",
+                signal: "VP3",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB12",
+                signal: "VN3",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB14",
+                signal: "VOUT3",
+                af: None,
+            },
+        ],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "CRC",
         address: 0x40023000,
         registers: Some(
@@ -227,4 +310,5 @@
 #[path="../registers/div_v1.rs"] pub mod div;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
+#[path="../registers/opa_v1.rs"] pub mod opa;
 #[path="../registers/wwdg_v1.rs"] pub mod wwdg;
