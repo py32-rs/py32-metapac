@@ -388,7 +388,7 @@
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 16,
+                            offset: 13,
                         },
                     ),
                     bit_size: 3,
