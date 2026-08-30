@@ -1,6 +1,65 @@
 
                 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
+        name: "RTC",
+        address: 0x40002800,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "rtc",
+                version: "v1",
+                block: "RTC",
+                ir: &rtc::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "RTCAPBEN",
+                    },
+                ),
+                reset: None,
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[
+            PeripheralPin {
+                pin: "PA4",
+                signal: "OUT",
+                af: Some(
+                    15,
+                ),
+            },
+            PeripheralPin {
+                pin: "PA6",
+                signal: "OUT",
+                af: Some(
+                    15,
+                ),
+            },
+            PeripheralPin {
+                pin: "PF3",
+                signal: "OUT",
+                af: Some(
+                    15,
+                ),
+            },
+        ],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "RTC",
+            },
+        ],
+    },
+    Peripheral {
         name: "WWDG",
         address: 0x40002c00,
         registers: Some(
@@ -161,4 +220,5 @@
             #[path="../registers/crc_v1.rs"] pub mod crc;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
+#[path="../registers/rtc_v1.rs"] pub mod rtc;
 #[path="../registers/wwdg_v1.rs"] pub mod wwdg;

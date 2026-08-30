@@ -1,6 +1,43 @@
 
                 pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
+        name: "RTC",
+        address: 0x40002800,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "rtc",
+                version: "v1",
+                block: "RTC",
+                ir: &rtc::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "RTCAPBEN",
+                    },
+                ),
+                reset: None,
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "RTC",
+            },
+        ],
+    },
+    Peripheral {
         name: "WWDG",
         address: 0x40002c00,
         registers: Some(
@@ -53,6 +90,48 @@
         dma_channels: &[],
         triggers: &[],
         interrupts: &[],
+    },
+    Peripheral {
+        name: "CTC",
+        address: 0x40006c00,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "ctc",
+                version: "v1",
+                block: "CTC",
+                ir: &ctc::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PLL",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "CTCEN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APBRSTR1",
+                        field: "CTCRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "RCC_CTC",
+            },
+        ],
     },
     Peripheral {
         name: "OPA",
@@ -307,8 +386,10 @@
     },
 ];
             #[path="../registers/crc_v1.rs"] pub mod crc;
+#[path="../registers/ctc_v1.rs"] pub mod ctc;
 #[path="../registers/div_v1.rs"] pub mod div;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
 #[path="../registers/opa_v1.rs"] pub mod opa;
+#[path="../registers/rtc_v1.rs"] pub mod rtc;
 #[path="../registers/wwdg_v1.rs"] pub mod wwdg;
