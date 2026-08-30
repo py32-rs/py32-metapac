@@ -210,6 +210,43 @@
         ],
     },
     Peripheral {
+        name: "PWR",
+        address: 0x40007000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "pwr",
+                version: "f002b",
+                block: "PWR",
+                ir: &pwr::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "PWREN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APBRSTR1",
+                        field: "PWRRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "SYSCFG",
         address: 0x40010000,
         registers: Some(
@@ -1074,6 +1111,7 @@
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/i2c_v1.rs"] pub mod i2c;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
+#[path="../registers/pwr_f002b.rs"] pub mod pwr;
 #[path="../registers/rcc_f002b.rs"] pub mod rcc;
 #[path="../registers/syscfg_f002b.rs"] pub mod syscfg;
 #[path="../registers/timer_v1.rs"] pub mod timer;

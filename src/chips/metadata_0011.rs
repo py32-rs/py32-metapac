@@ -18,6 +18,43 @@
         interrupts: &[],
     },
     Peripheral {
+        name: "PWR",
+        address: 0x40007000,
+        registers: Some(
+            PeripheralRegisters {
+                kind: "pwr",
+                version: "f002b",
+                block: "PWR",
+                ir: &pwr::REGISTERS,
+            },
+        ),
+        rcc: Some(
+            PeripheralRcc {
+                bus_clock: "PCLK1",
+                kernel_clock: Clock(
+                    "PCLK1",
+                ),
+                enable: Some(
+                    PeripheralRccRegister {
+                        register: "APBENR1",
+                        field: "PWREN",
+                    },
+                ),
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APBRSTR1",
+                        field: "PWRRST",
+                    },
+                ),
+                stop_mode: StopMode::Stop1,
+            },
+        ),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+    },
+    Peripheral {
         name: "CRC",
         address: 0x40023000,
         registers: Some(
@@ -102,3 +139,4 @@
             #[path="../registers/crc_v1.rs"] pub mod crc;
 #[path="../registers/gpio_v1.rs"] pub mod gpio;
 #[path="../registers/iwdg_v1.rs"] pub mod iwdg;
+#[path="../registers/pwr_f002b.rs"] pub mod pwr;

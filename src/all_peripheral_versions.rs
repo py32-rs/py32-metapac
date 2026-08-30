@@ -14,6 +14,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("iwdg", &["v1", ]),
     ("opa", &["v1", ]),
     ("pwm", &["v1", ]),
+    ("pwr", &["f002b", "f030", "f072", "ms32c001b", ]),
     ("rcc", &["f002b", "f030", "f072", "ms32c001b", ]),
     ("rtc", &["v1", ]),
     ("spi", &["v1", "v2", ]),
