@@ -661,6 +661,20 @@
                     enumm: None,
                 },
                 Field {
+                    name: "calbyp",
+                    description: Some(
+                        "Calibration bypass.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "calset",
                     description: Some(
                         "Calibration factor selection.",
@@ -675,9 +689,23 @@
                     enumm: None,
                 },
                 Field {
-                    name: "calfail",
+                    name: "offsuc",
                     description: Some(
-                        "Calibration fail flag.",
+                        "Offset calibration success flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "calsuc",
+                    description: Some(
+                        "Calibration success flag (0 = calibration failed).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

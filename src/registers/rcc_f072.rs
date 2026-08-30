@@ -533,9 +533,9 @@
                     enumm: None,
                 },
                 Field {
-                    name: "rtcapben",
+                    name: "timdiv_en",
                     description: Some(
-                        "RTC APB clock enable.",
+                        "TIMER PCLK frequency control. 0: TIMER PCLK is system PCLK*2, capped at HCLK; 1: TIMER PCLK is system PCLK*1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -783,7 +783,7 @@
                 Field {
                     name: "dbgen",
                     description: Some(
-                        "DBG clock enable.",
+                        "MCU debug module clock enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1265,7 +1265,7 @@
                 Field {
                     name: "dbgrst",
                     description: Some(
-                        "DBG reset.",
+                        "MCU debug module reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1772,7 +1772,7 @@
                             offset: 24,
                         },
                     ),
-                    bit_size: 3,
+                    bit_size: 4,
                     array: None,
                     enumm: Some(
                         "Mcosel",
@@ -2201,7 +2201,7 @@
                     enumm: None,
                 },
                 Field {
-                    name: "adcdiv",
+                    name: "adc_div",
                     description: Some(
                         "ADC Frequency Division.",
                     ),
@@ -2283,9 +2283,9 @@
                     enumm: None,
                 },
                 Field {
-                    name: "nrst_fltdis",
+                    name: "pinrst_fltdis",
                     description: Some(
-                        "NRST_FLTDIS oscillator ready.",
+                        "NRST 40 us filter disable. 0: filter enabled; 1: filter disabled, reset synchronized to the system clock.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -3119,7 +3119,7 @@
         Enum {
             name: "Mcosel",
             description: None,
-            bit_size: 3,
+            bit_size: 4,
             variants: &[
                 EnumVariant {
                     name: "NONE",
@@ -3136,9 +3136,9 @@
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESERVED",
+                    name: "HSI10M",
                     description: Some(
-                        "Reserved",
+                        "HSI 10M clock selected",
                     ),
                     value: 2,
                 },
@@ -3176,6 +3176,20 @@
                         "LSE clock selected",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "HCLK",
+                    description: Some(
+                        "HCLK clock selected",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "PCLK",
+                    description: Some(
+                        "PCLK clock selected",
+                    ),
+                    value: 9,
                 },
             ],
         },

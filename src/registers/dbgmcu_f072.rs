@@ -381,7 +381,7 @@
                             offset: 0,
                         },
                     ),
-                    bit_size: 31,
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

@@ -145,6 +145,23 @@
                         },
                     ),
                 },
+                BlockItem {
+                    name: "eiic",
+                    description: Some(
+                        "I2C configuration register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Eiic",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -666,6 +683,58 @@
             ],
         },
         FieldSet {
+            name: "Eiic",
+            extends: None,
+            description: Some(
+                "I2C configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pa_eiic",
+                    description: Some(
+                        "EIIC control signal for PA.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pb_eiic",
+                    description: Some(
+                        "EIIC control signal for PB.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pf_eiic",
+                    description: Some(
+                        "EIIC control signal for PF.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Paens",
             extends: None,
             description: Some(
@@ -755,7 +824,7 @@
                             offset: 0,
                         },
                     ),
-                    bit_size: 16,
+                    bit_size: 10,
                     array: None,
                     enumm: None,
                 },

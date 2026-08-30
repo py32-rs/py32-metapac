@@ -755,6 +755,34 @@
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "comp1rst",
+                    description: Some(
+                        "COMP1 reset.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "comp2rst",
+                    description: Some(
+                        "COMP2 reset.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -873,6 +901,34 @@
             ),
             bit_size: 32,
             fields: &[
+                Field {
+                    name: "comp1sel",
+                    description: Some(
+                        "COMP1 clock source selection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "comp2sel",
+                    description: Some(
+                        "COMP2 clock source selection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
                 Field {
                     name: "lptim1sel",
                     description: Some(
@@ -1399,6 +1455,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 16,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lse_startup",
+                    description: Some(
+                        "LSE startup time.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
                         },
                     ),
                     bit_size: 2,

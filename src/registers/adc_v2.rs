@@ -95,6 +95,23 @@
                     ),
                 },
                 BlockItem {
+                    name: "smpr3",
+                    description: Some(
+                        "sample time register 3",
+                    ),
+                    array: None,
+                    byte_offset: 0x14,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Smpr3",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "jofr",
                     description: Some(
                         "injected channel data offset register x",
@@ -107,30 +124,13 @@
                             },
                         ),
                     ),
-                    byte_offset: 0x14,
+                    byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
                                 "Jofr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "smpr3",
-                    description: Some(
-                        "desc SMPR2.",
-                    ),
-                    array: None,
-                    byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Smpr3",
                             ),
                         },
                     ),
@@ -990,7 +990,7 @@
                             offset: 20,
                         },
                     ),
-                    bit_size: 4,
+                    bit_size: 2,
                     array: None,
                     enumm: None,
                 },
@@ -1042,7 +1042,7 @@
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 9,
+                                len: 4,
                                 stride: 3,
                             },
                         ),
@@ -1057,7 +1057,7 @@
             name: "Smpr2",
             extends: None,
             description: Some(
-                "desc SMPR2.",
+                "sample time register 2",
             ),
             bit_size: 32,
             fields: &[
@@ -1075,7 +1075,7 @@
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 9,
+                                len: 10,
                                 stride: 3,
                             },
                         ),
@@ -1090,7 +1090,7 @@
             name: "Smpr3",
             extends: None,
             description: Some(
-                "desc SMPR2.",
+                "sample time register 3",
             ),
             bit_size: 32,
             fields: &[
@@ -1108,7 +1108,7 @@
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 9,
+                                len: 10,
                                 stride: 3,
                             },
                         ),
@@ -1510,9 +1510,9 @@
                     value: 5,
                 },
                 EnumVariant {
-                    name: "CYCLES71_5",
+                    name: "CYCLES134_5",
                     description: Some(
-                        "71.5 cycles",
+                        "134.5 cycles",
                     ),
                     value: 6,
                 },

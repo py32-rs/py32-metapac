@@ -224,6 +224,23 @@
                         },
                     ),
                 },
+                BlockItem {
+                    name: "gtpr",
+                    description: Some(
+                        "Guard time and prescaler register",
+                    ),
+                    array: None,
+                    byte_offset: 0x18,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Gtpr",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -529,6 +546,34 @@
                     enumm: None,
                 },
                 Field {
+                    name: "lbdl",
+                    description: Some(
+                        "LIN break detection length.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lbdie",
+                    description: Some(
+                        "LIN break detection interrupt enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "lbcl",
                     description: Some(
                         "Last bit clock pulse.",
@@ -598,11 +643,25 @@
                             offset: 12,
                         },
                     ),
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
                     enumm: Some(
                         "Stop",
                     ),
+                },
+                Field {
+                    name: "linen",
+                    description: Some(
+                        "LIN mode enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
                 },
             ],
         },
@@ -911,6 +970,44 @@
             ],
         },
         FieldSet {
+            name: "Gtpr",
+            extends: None,
+            description: Some(
+                "Guard time and prescaler register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "psc",
+                    description: Some(
+                        "Prescaler value.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gt",
+                    description: Some(
+                        "Guard time value.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Sr",
             extends: None,
             description: Some(
@@ -1024,6 +1121,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lbd",
+                    description: Some(
+                        "LIN break detection flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
                         },
                     ),
                     bit_size: 1,
@@ -1240,7 +1351,7 @@
         Enum {
             name: "Stop",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
                     name: "STOP1",
@@ -1250,11 +1361,25 @@
                     value: 0,
                 },
                 EnumVariant {
+                    name: "STOP0P5",
+                    description: Some(
+                        "0.5 stop bits",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "STOP2",
                     description: Some(
                         "2 stop bits",
                     ),
-                    value: 1,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "STOP1P5",
+                    description: Some(
+                        "1.5 stop bits",
+                    ),
+                    value: 3,
                 },
             ],
         },

@@ -313,9 +313,9 @@
                     ),
                 },
                 Field {
-                    name: "ddf",
+                    name: "dff",
                     description: Some(
-                        "desc DDF.",
+                        "Data frame format.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

@@ -19,11 +19,16 @@
                 ),
                 enable: Some(
                     PeripheralRccRegister {
-                        register: "APBENR1",
-                        field: "RTCAPBEN",
+                        register: "BDCR",
+                        field: "RTCEN",
                     },
                 ),
-                reset: None,
+                reset: Some(
+                    PeripheralRccRegister {
+                        register: "APBRSTR1",
+                        field: "RTCAPBRST",
+                    },
+                ),
                 stop_mode: StopMode::Stop1,
             },
         ),

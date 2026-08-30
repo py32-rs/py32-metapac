@@ -108,9 +108,9 @@
                     ),
                 },
                 BlockItem {
-                    name: "sdkr",
+                    name: "borcr",
                     description: Some(
-                        "desc SDKR.",
+                        "Flash BORCR address register.",
                     ),
                     array: None,
                     byte_offset: 0x24,
@@ -119,7 +119,7 @@
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "Sdkr",
+                                "Borcr",
                             ),
                         },
                     ),
@@ -334,6 +334,44 @@
                         },
                     ),
                     bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Borcr",
+            extends: None,
+            description: Some(
+                "Flash BORCR address register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "bor_en",
+                    description: Some(
+                        "BOR enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bor_lev",
+                    description: Some(
+                        "BOR level.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -664,72 +702,6 @@
                         },
                     ),
                     bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Sdkr",
-            extends: None,
-            description: Some(
-                "desc SDKR.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sdk_strt",
-                    description: Some(
-                        "desc SDK_STRT.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bor_en",
-                    description: Some(
-                        "desc BOR_EN.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "sdk_end",
-                    description: Some(
-                        "desc SDK_END.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "bor_lev",
-                    description: Some(
-                        "desc BOR_LEV.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
-                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },

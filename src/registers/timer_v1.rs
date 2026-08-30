@@ -6758,7 +6758,7 @@
                             offset: 0,
                         },
                     ),
-                    bit_size: 16,
+                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },

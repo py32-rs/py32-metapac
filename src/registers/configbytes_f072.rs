@@ -51,9 +51,9 @@
                     ),
                 },
                 BlockItem {
-                    name: "ts_cal_85c",
+                    name: "ts_cal_105c",
                     description: Some(
-                        "Temperature sensor calibration value at 85°C.",
+                        "Temperature sensor calibration value at 105°C.",
                     ),
                     array: None,
                     byte_offset: 0x30,
@@ -388,7 +388,7 @@
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 13,
+                            offset: 16,
                         },
                     ),
                     bit_size: 3,

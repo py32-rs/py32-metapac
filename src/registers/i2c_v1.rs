@@ -61,6 +61,23 @@
                     ),
                 },
                 BlockItem {
+                    name: "oar2",
+                    description: Some(
+                        "Own address register 2.",
+                    ),
+                    array: None,
+                    byte_offset: 0xc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Oar2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "dr",
                     description: Some(
                         "Data register.",
@@ -228,6 +245,48 @@
                     enumm: None,
                 },
                 Field {
+                    name: "smbus",
+                    description: Some(
+                        "SMBus mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smbtype",
+                    description: Some(
+                        "SMBus type.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "enarp",
+                    description: Some(
+                        "ARP enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "enpec",
                     description: Some(
                         "PEC enable.",
@@ -335,6 +394,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "alert",
+                    description: Some(
+                        "SMBus alert.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
                         },
                     ),
                     bit_size: 1,
@@ -490,10 +563,76 @@
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "addmode",
+                    description: Some(
+                        "Addressing mode (slave mode).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Oar2",
+            extends: None,
+            description: Some(
+                "Own address register 2.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "endual",
+                    description: Some(
+                        "Dual addressing mode enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "add2",
+                    description: Some(
+                        "Interface address bits 7:1 in dual addressing mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
                             offset: 1,
                         },
                     ),
                     bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "oa2msk",
+                    description: Some(
+                        "Own address 2 mask.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },
@@ -543,6 +682,20 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "add10",
+                    description: Some(
+                        "10-bit header sent (master mode).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
                         },
                     ),
                     bit_size: 1,
@@ -661,6 +814,34 @@
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "timeout",
+                    description: Some(
+                        "Timeout or Tlow error.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smbalert",
+                    description: Some(
+                        "SMBus alert.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -721,6 +902,34 @@
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smbdefault",
+                    description: Some(
+                        "SMBus device default address.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smbhost",
+                    description: Some(
+                        "SMBus host header.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
                         },
                     ),
                     bit_size: 1,
