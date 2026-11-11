@@ -15,6 +15,7 @@ PROVIDE(TIM1_BRK_UP_TRG_COM = DefaultHandler);
 PROVIDE(TIM1_CC = DefaultHandler);
 PROVIDE(TIM2 = DefaultHandler);
 PROVIDE(TIM3 = DefaultHandler);
+PROVIDE(TIM6_LPTIM1_DAC = DefaultHandler);
 PROVIDE(TIM7 = DefaultHandler);
 PROVIDE(TIM14 = DefaultHandler);
 PROVIDE(TIM15 = DefaultHandler);
